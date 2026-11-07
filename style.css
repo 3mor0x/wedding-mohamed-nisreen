@@ -261,22 +261,25 @@ body {
     text-align: center;
 }
 
-/* إطار صورة الخاتم في الهيرو */
+/* تعديل إطار الصورة لتظهر كاملة تماماً بدون قص باستخدام object-fit: contain مع خلفية متناسقة */
 .hero-photo-frame {
     width: 100%;
-    height: 280px;
+    height: 320px;
     border-radius: 16px;
     overflow: hidden;
     border: 1.5px solid var(--gold);
     box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
     margin-bottom: 20px;
+    background-color: #f7f4ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-main-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain !important; /* ضمان ظهور الصورة كاملاً وبأبعادها الصحيحة */
     display: block;
 }
 
@@ -328,10 +331,11 @@ body {
     border: 1.5px solid var(--gold-border);
 }
 
-.verse-box p {
-    font-size: 1rem;
+.quran-verse {
+    font-size: 1.05rem;
     color: var(--text-dark);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-weight: 700;
 }
 
 .song-quote {
