@@ -261,7 +261,6 @@ body {
     text-align: center;
 }
 
-/* تعديل إطار الصورة لتظهر كاملة تماماً بدون قص باستخدام object-fit: contain مع خلفية متناسقة */
 .hero-photo-frame {
     width: 100%;
     height: 320px;
@@ -279,7 +278,7 @@ body {
 .hero-main-img {
     width: 100%;
     height: 100%;
-    object-fit: contain !important; /* ضمان ظهور الصورة كاملاً وبأبعادها الصحيحة */
+    object-fit: contain !important;
     display: block;
 }
 
@@ -580,24 +579,31 @@ body {
     line-height: 1.6;
 }
 
+/* الخاتمة المعدلة لتكون في المنتصف ومرتبة تماماً */
 .footer-box {
     padding: 45px 20px;
     text-align: center;
     background: #faf8f5;
     border-top: 1px solid #f0eae1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-names {
     font-family: 'Aref Ruqaa', serif;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     color: var(--gold);
+    margin-bottom: 5px;
 }
 
 .footer-text {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     color: var(--text-dark);
     line-height: 1.8;
     margin-bottom: 14px;
+    text-align: center;
 }
 
 .footer-date {
