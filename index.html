@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>دعوة زفاف محمد & نسرين</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- حاوية تساقط أوراق الورد الديناميكية -->
+    <div class="petals-container" id="petalsContainer"></div>
+
+    <!-- زر الموسيقى النابض -->
+    <div class="music-controller animate-pulse" onclick="toggleAudio()" id="musicToggleBtn" title="تشغيل / إيقاف الموسيقى">
+        <div class="music-disk" id="musicDisk">🎵</div>
+        <span class="music-txt">MUSIC</span>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 1. شاشة البوابة الفاخرة -->
+    <section class="gateway-overlay" id="gatewayScreen">
+        <div class="gateway-bg-image">
+            <img src="gateway-bg.jpg" alt="Mohamed & Nisreen">
+            <div class="gateway-dark-overlay"></div>
+        </div>
+        <div class="gateway-card animate-pop">
+            <div class="card-ornament">✧ ❖ ✧</div>
+            <div class="gateway-ring-pulse">💍</div>
+            <h1 class="gateway-en-names">MOHAMED & NISREEN</h1>
+            <p class="gateway-ar-names">محمـد ❦ نـسريـن</p>
+            <div class="gold-stars">✦ ✦ ✦</div>
+            <p class="gateway-date-text">December 11, 2026</p>
+            <p class="gateway-subtitle">يُشرفان بدعوتكم لحضور حفل زفافهما</p>
+            <button class="gateway-open-btn" onclick="openInvitation()">
+                <span>فتح الدعوة</span> ✉️
+            </button>
+            <div class="card-ornament">✧ ❖ ✧</div>
+        </div>
+    </section>
+
+    <!-- 2. محتوى الدعوة الرئيسي -->
+    <main class="invitation-main-container" id="mainContent">
+        
+        <!-- الهيرو الفاخر مع إظهار صورة الخاتم هنا -->
+        <header class="invitation-header-box reveal">
+            
+            <!-- صورة الخاتم المرفقة تظهر هنا بإطار فخم -->
+            <div class="hero-photo-frame">
+                <img src="gateway-bg.jpg" alt="Mohamed & Nisreen Ring" class="hero-main-img">
+            </div>
+
+            <div class="header-inner-frame">
+                <span class="corner-star top-left">✦</span>
+                <span class="corner-star top-right">✦</span>
+                <div class="floral-top">🌸 🕊️ 🌸</div>
+                <h2 class="main-ar-title">محمـد</h2>
+                <span class="and-symbol">&</span>
+                <h2 class="main-ar-title">نـسريـن</h2>
+                <div class="floral-bottom">✧ ✦ ✧</div>
+                <span class="corner-star bottom-left">✦</span>
+                <span class="corner-star bottom-right">✦</span>
+            </div>
+            
+            <div class="verse-box">
+                <p>"وَتَمَّتْ بِحَمْدِ اللَّهِ آيَاتُ فَرَحِنَا.. وَأَشْرَقَ فِي لَيْلِ التَّلاقِي بَدْرُنَا"</p>
+                <div class="gold-sep-small">✦ ❖ ✦</div>
+                <p class="song-quote">"فرحة أخيراً تجمعنا.. وتصبرنا لَهُ مَعْنَى"</p>
+            </div>
+        </header>
+
+        <!-- تفاصيل الدعوة والعائلة -->
+        <section class="section-card reveal">
+            <span class="card-tag">WEDDING CEREMONY INFO</span>
+            <h3 class="card-title">تتشرف عائلتينا لمشاركتنا فرحتنا</h3>
+            <div class="gold-sep"></div>
+
+            <div class="couple-names-badge">
+                <span class="badge-name">محمـد</span>
+                <span class="badge-and">&</span>
+                <span class="badge-name">نـسريـن</span>
+            </div>
+        </section>
+
+        <!-- العداد التنازلي والتقويم (ديسمبر 2026) -->
+        <section class="section-card countdown-card reveal">
+            <span class="card-tag">COUNTING DOWN</span>
+            <h3 class="card-title">The Wedding Countdown</h3>
+            <div class="gold-sep"></div>
+
+            <div class="countdown-grid">
+                <div class="c-box">
+                    <span class="c-num" id="days">00</span>
+                    <span class="c-lbl">DAYS</span>
+                </div>
+                <div class="c-box">
+                    <span class="c-num" id="hours">00</span>
+                    <span class="c-lbl">HOURS</span>
+                </div>
+                <div class="c-box">
+                    <span class="c-num" id="minutes">00</span>
+                    <span class="c-lbl">MINUTES</span>
+                </div>
+                <div class="c-box">
+                    <span class="c-num" id="seconds">00</span>
+                    <span class="c-lbl">SECONDS</span>
+                </div>
+            </div>
+
+            <!-- التقويم لشهر ديسمبر 2026 -->
+            <div class="calendar-box">
+                <h4 class="cal-title">DECEMBER 2026</h4>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+        </section>
+
+        <!-- تفاصيل القاعة والماسترز -->
+        <section class="section-card venues-card reveal">
+            <span class="card-tag">WEDDING VENUE</span>
+            <h3 class="card-title">مكان الحفل</h3>
+            <div class="gold-sep"></div>
+
+            <div class="venue-item-box">
+                <h4 class="venue-name">✨ قاعة لاڤيدا ✨</h4>
+                <p class="venue-desc-ar">دار المركبات - صلاح سالم، القاهرة</p>
+                <p class="venue-time">الخميس 11 ديسمبر 2026 • الساعة 07:00 مساءً</p>
+                <a href="https://maps.app.goo.gl/iGZGnvn2fj7DkyR19?g_st=ac" target="_blank" class="map-gold-btn">
+                    📍 Open Location in Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- سجل التبريكات -->
+        <section class="section-card wishes-card reveal">
+            <span class="card-tag">WARM BLESSINGS</span>
+            <h3 class="card-title">Send Your Wishes</h3>
+            <div class="gold-sep"></div>
+
+            <div class="wishes-form">
+                <input type="text" id="guestName" placeholder="Your Name / اسمك الكريم" required>
+                <textarea id="guestMessage" rows="3" placeholder="Leave a heartfelt message for Mohamed & Nisreen..." required></textarea>
+                <button onclick="addWish()" class="map-gold-btn send-btn">SEND BLESSING 🤍</button>
+            </div>
+            
+            <div class="wishes-stream" id="wishesFeed"></div>
+        </section>
+
+        <!-- الخاتمة -->
+        <footer class="footer-box reveal">
+            <h2 class="footer-names">محمد & نسرين</h2>
+            <div class="gold-sep"></div>
+            <p class="footer-text">وجودكم هو أقيم هدية في ليلة عمرنا<br>ننتظركم بكل حب لنشارك معاً أجمل لحظات حياتنا 🤍</p>
+            <p class="footer-date">Thursday, December 11, 2026</p>
+            <p class="footer-brand">DIGITAL WEDDING INVITATION</p>
+        </footer>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
